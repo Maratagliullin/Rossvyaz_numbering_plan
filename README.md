@@ -43,6 +43,23 @@ Docker
 В дирректории с проектом выполнить команду `docker-compose up`  
 Команда запуска получения данных из Реестр российской системы и плана нумерации  `docker-compose exec WEB python3 manage.py update_phone_base`
 
-
+#### Создать и заполнить своими данными файл переменных окружения:   
+Пример local.env (на одном уровне с docker-compose.yml) 
+```
+PGADMIN_DEFAULT_EMAIL=admin@admin.ru
+PGADMIN_DEFAULT_PASSWORD=admin
+DJANGO_SETTINGS_MODULE=find_number.settings
+DJANGO_WSGI=find_number.wsgi
+PYTHONUNBUFFERED=1
+DATABASE_URL=postgres://localdb:localdb@db:5432/localdb
+POSTGRES_USER=localdb
+POSTGRES_PASSWORD=localdb
+POSTGRES_DB=localdb
+POSTGRES_HOST=db
+C_FORCE_ROOT=true
+SECRET_KEY==@ncgb%60i%044*9yu%*$^$55s+(-y#qj_+4ldra-syv!62yu@
+DEBUG=True
+DJANGO_ADMINISTRATOR_PASS=adminpass
+```
 
 
