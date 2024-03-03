@@ -1,6 +1,7 @@
 
 from django.contrib import admin
-from .models import ABC_files, ABC_data, Update_status
+
+from .models import ABC_data, ABC_files, Update_status
 
 
 @admin.action(description='Откатить обновление')

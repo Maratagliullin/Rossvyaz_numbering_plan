@@ -1,14 +1,14 @@
 import csv
-from django.core.management.base import BaseCommand
-import requests
-from num_data.models import ABC_files, ABC_data, Update_status
 import sys
 from os.path import basename
+
+import requests
 from django.core.files.base import ContentFile
+from django.core.management.base import BaseCommand
+from django.db import IntegrityError
 from django.db.utils import DataError
 from django.utils import timezone
-
-from django.db import IntegrityError
+from num_data.models import ABC_data, ABC_files, Update_status
 
 
 class Command(BaseCommand):

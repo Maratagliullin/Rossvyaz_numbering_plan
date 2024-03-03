@@ -1,7 +1,8 @@
-from django.urls import path
-from . import views
-from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls.static import static
+from django.urls import path
+
+from . import views
 
 urlpatterns = [
     path('api/v1/info', views.FindNum.as_view()),
