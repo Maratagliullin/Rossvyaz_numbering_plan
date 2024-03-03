@@ -1,0 +1,6 @@
+django==5.0.2
+psycopg2
+requests
+djangorestframework==3.14.0
+dj-database-url==0.5.0
+django-cors-headers==4.3.1

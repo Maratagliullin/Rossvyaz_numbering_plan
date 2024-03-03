@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'num_data/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'num_data/css/style.css' %} ">
+    <title>{% block title %}{% endblock %}</title>
+    {% block script %}
+    {% load static %}
+    <script src="{% static 'num_data/js/vue.js' %}"></script>
+    <script src="{% static 'num_data/js/axios.min.js' %}"></script>
+    {% endblock %}
+</head>
+<body>
+
+{% verbatim %}
+<div id="app">
+<div class="container">
+        <div class="phone_block">
+            <form method="post" >
+                  <div class="form-group">
+                      <label class="col-form-label" for="phone_number">Номер телефона</label>
+                      <input v-model="phone_number" name="phone_number" type="text"  class="form-control"  id="phone_number" aria-describedby="phoneHelp" placeholder="Номер телефона в формате MSISDN">
+                      <small id="phoneHelp" class="form-text text-muted"> Номер телефона в формате MSISDN</small>
+                  </div>
+                  <button type="submit" v-on:click="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </div>
+
+        <div class="result_block">
+             <div v-for="error in errors" class="result_item">
+                 <span class="result_label">{{error.error_text}}</span>
+             </div>
+
+            {{number}}
+             <div v-for="value in info" class="result_item">
+                <div class='result_label'>Номер телефона: <span class="result_text">{{value.number}}</span></div>
+                <div class='result_label'>Наименование оператора: <span class="result_text">{{value.operator}}</span></div>
+                <div class='result_label'>Регион: <span class="result_text">{{value.region}}</span></div>
+            </div>
+        </div>
+</div>
+</div>
+{% endverbatim %}
+</body>
+
+{% load static %}
+<script src="{% static 'num_data/js/app.js' %}"></script>
+</html>
